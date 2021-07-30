@@ -179,6 +179,7 @@ function unsymbolize(card) {								//converts emotes and symbols to letters
 	card = card.replace(/\{([0-9CWUBRGS])([CWUBRGSP])}/g, "{$1/$2}") //add hybrid slashes to emotes
 	card = card.replace(/[{}]/g, ""); //remove {s
 	card = card.replace(/[([]([0-9WUBRGPHCSEAQ]\/?[WUBRGPHCSEAQP]?)[)\]]/g, "$1"); //remove () and [] but only around mana symbols
+	card = card.replace(/([WUBRG])\/P/g, "H/$1");
 	return card;
 }
 function MSECardWriter(cardData) {							//converts card object to MSE data
